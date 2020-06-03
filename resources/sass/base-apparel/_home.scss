@@ -52,11 +52,12 @@
         }
         button{
           background: linear-gradient(135deg, hsl(0, 80%, 86%), hsl(0, 74%, 74%));
-          padding: 15px 45px;
+          padding: 16px 45px;
           border-radius: 50px;
           position: absolute;
           right: 180px;
           box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.2);
+          border: none;
         }
         .error-icon{
           display: none;
