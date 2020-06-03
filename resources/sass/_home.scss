@@ -1,0 +1,34 @@
+body{
+  background-color: $four-card-lightgray;
+  font-family: $font-primary, sans-serif;
+  img{
+    max-width: 100%;
+  }
+  a{
+    cursor: pointer;
+  }
+}
+
+#home{
+  h1{
+    text-align: center;
+    margin: 50px auto;
+    font-size: 72px;
+    color: $four-card-red;
+  }
+  .card{
+    border: none;
+    box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.2);
+    border-radius: 6px;
+    transition: .3s;
+    &:hover{
+      transform: scale(1.1);
+    }
+    .card-text{
+      padding: 20px 10px;
+      font-size: 18px;
+      color: $four-card-cyan;
+      text-align: center;
+    }
+  }
+}

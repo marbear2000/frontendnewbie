@@ -1,0 +1,114 @@
+#bootcamp{
+  height: 100vh;
+  font-family: 'Inter', sans-serif;
+  .row{
+    align-items: center;
+  }
+  .section-john{
+    display: none;
+  }
+  .image-john{
+    display: none;
+  }
+  .section-quote{
+    z-index: 100;
+  }
+  .quote-img{
+    padding-left: 80px;
+  }
+  .quote-text{
+    margin-top: -50px;
+    font-size: 32px;
+    color: $bootcamp-darkblue;
+    width: 150%;
+    font-weight: 300;
+  }
+  .quote-details{
+    display: flex;
+    justify-content: left;
+    align-items: center;
+  }
+  .quote-name{
+    font-weight: 600;
+    font-size: 20px;
+  }
+  .quote-position{
+    padding-left: 10px;
+    color: $bootcamp-grayblue;
+    font-weight: 300;
+  }
+  .slide-img{
+    background-image: url(/img/bootcamp/pattern-bg.svg);
+    height: 680px;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100% auto;
+    img{
+      height: 488px;
+      position: absolute;
+      right: 94px;
+      top: 100px;
+      border-radius: 6px;
+      box-shadow: 0px 25px 40px rgba(0, 0, 0, 0.2);
+    }
+  }
+  .slide-change{
+    background: #fff;
+    border: none;
+    padding: 16px 30px;
+    border-radius: 35px;
+    position: absolute;
+    bottom: 62px;
+    left: 103px;
+    outline: none;
+  }
+  img.slide-prev{
+    padding-right: 20px;
+  }
+  .slide-next{
+    padding-left: 20px;
+  }
+  .section-footer{
+    margin-top: -145px;
+    background-image: url(/img/bootcamp/pattern-curve.svg);
+    height: 154px;
+    background-repeat: no-repeat;
+    background-position: left bottom;
+  }
+}
+
+@media(max-width: 768px){
+  #bootcamp{
+    .section-quote{
+      text-align: center;
+      margin-bottom: 145px;
+    }
+   .quote-text{
+      width: 100%;
+    }
+    .quote-img{
+      padding-left: 0px;
+    }
+    .quote-text{
+      font-size: 24px;
+    }
+    .quote-details{
+      flex-direction: column;
+    }
+    .slide-img{
+      height: 500px;
+      background-size: 100% 100%;
+      margin-bottom: 30px;
+      img{
+        height: 400px;
+        width: 320px;
+        right: 25px;
+        top: 53px;
+      }
+    }
+    .slide-change{
+      bottom: 58px;
+    }
+  }
+}

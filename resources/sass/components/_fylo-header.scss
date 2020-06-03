@@ -1,0 +1,43 @@
+#fylo-header{
+  .container.container-small{
+    max-width: 1300px;
+  }
+  .navbar-nav{
+    flex-direction: row !important;
+  }
+  .nav-item{
+    font-family: $font-raleway;
+    margin-right: 30px;
+    a{
+      color: hsl(243, 87%, 12%)!important;
+      font-weight: 400;
+      text-decoration: none;
+      letter-spacing: 0.30px;
+      &:hover{
+        opacity: 0.7;
+      }
+    }
+  }
+}
+
+
+
+@media(max-width: 600px){
+  #fylo-header{
+    .navbar{
+      flex-wrap: nowrap;
+    }
+    .nav-item{
+      margin-right: 10px;
+      font-size: 12px;
+    }
+    a{
+      white-space: nowrap;
+    }
+    img{
+      width: 70%;
+    }
+  }
+}
+
+

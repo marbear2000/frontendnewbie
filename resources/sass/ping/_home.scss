@@ -1,0 +1,127 @@
+#ping{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  .section-logo{
+    margin-top: 50px;
+    margin-bottom: 30px;
+  }
+  .section-text{
+    text-align: center;
+    .header{
+    color: $ping-grey;
+    font-weight: 300;
+    font-size: 60px;
+      .header-bold{
+        color: $black;
+        font-weight: 600;
+      }
+    }
+    p{
+      font-size: 20px;
+      font-weight: 300;
+      letter-spacing: .22px;
+      margin-top: 15px;
+      margin-bottom: 30px;
+    }
+  }
+  .section-form{
+    margin-bottom: 80px;
+    input{
+      border: 1px solid $ping-lightblue;
+      color: $ping-blue;
+      border-radius: 36px;
+      padding: 16px 32px;
+      width: 600px;
+      outline: none;
+    }
+    ::placeholder{
+      color: $ping-lightblue;
+    }
+    .btn-notify{
+      margin-left: 20px;
+      background: $ping-blue;
+      border: 1px solid $ping-blue;
+      border-radius: 36px;
+      color: $white;
+      padding: 16px 32px;
+      width: 250px;
+      outline: none;
+      &:hover{
+        background: $ping-lightblue;
+        border: 1px solid $ping-lightblue;
+      }
+    }
+    .error-message{
+      padding-left: 20px;
+      color: $ping-lightred;
+      font-size: 12px;
+      margin-top: 5px;
+    }
+  }
+  .section-image{
+    max-width: 800px;
+    margin-bottom: 100px;
+  }
+  .section-footer{
+    text-align: center;
+    .social-media{
+      display: flex;
+      align-items: center;
+      justify-content: space-evenly;
+      .fab{
+        margin-bottom: 20px;
+        color: $ping-blue;
+        font-size: 20px;
+        border: 1px solid $ping-lightblue;
+        height: 40px;
+        width: 40px;
+        border-radius:50%;
+        -moz-border-radius:50%;
+        -webkit-border-radius:50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+         &:hover{
+          background: $ping-blue;
+          color: $white;
+          border: 1px solid $ping-blue;
+         }
+      }
+    }
+    .copyright{
+      color: $ping-grey;
+    }
+  }
+}
+
+@media(max-width: 768px){
+  #ping{
+    .section-text{
+      .header{
+        font-size: 28px;
+      }
+    }
+    .section-form{
+      .details-form{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        input{
+          width: 300px;
+        }
+        .btn-notify{
+          width: 300px;
+          margin-left: 0px;
+          margin-top: 20px;
+        }
+      }
+    }
+    .section-image{
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+  }
+}

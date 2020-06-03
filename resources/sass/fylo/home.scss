@@ -1,0 +1,152 @@
+#fylo{
+  .container.container-small{
+    max-width: 1300px;
+  }
+  .section-text{
+    color: $fylo-darkblue;
+    letter-spacing: 0.30px;
+    h1{
+      font-weight: 700;
+      font-family: $font-raleway;
+      line-height: 1.3;
+      font-size: 42px;
+    }
+    p{
+      font-family: $font-open;
+      font-size: 18px;
+    }
+  }
+  .btn-fylo{
+    background: $fylo-brightblue;
+    border: 1px solid $fylo-brightblue;
+    padding: 12px 50px;
+    color: $white;
+    border-radius: 4px;
+    box-shadow: 0px 3px 15px rgba(0, 0 , 0, 0.2);
+  }
+  #fylo-form{
+    input{
+      outline: none;
+      color: $fylo-darkblue;
+      border: 1px solid $fylo-darkblue;
+      padding: 12px 20px;
+      border-radius: 4px;
+      width: 60%;
+    }
+  }
+  .section-2{
+    .section-2-bg{
+      background-color: #F8F8FE;
+      padding-bottom: 100px;
+    }
+    .productive-text{
+      padding-right: 100px;
+    }
+    .fylo-link{
+      color: $fylo-cyan;
+      text-decoration: none;
+    }
+    hr{
+      width: 25%;
+      margin: 10px 0px 20px 0px;
+      border: 1px solid $fylo-cyan;
+    }
+    .card{
+      border: none;
+      box-shadow: 0px 3px 15px rgba(0, 0 , 0, 0.2);
+      padding: 30px 40px;
+      max-width: 65%;
+      p{
+        line-height: 1.5;
+        letter-spacing: .30px;
+        color: $fylo-darkblue;
+      }
+      .avatar{
+        display: flex;
+        .avatar-picture{
+          img{
+            border-radius: 50%;
+            height: 50px;
+            width: auto;
+          }
+        }
+        .avatar-details{
+          p{
+            margin-bottom: 0px;
+          }
+          .avatar-name{
+            font-weight: 700;
+          }
+          .avatar-position{
+            font-size: 12px;
+          }
+        }
+      }
+    }
+  }
+  .section-3{
+    background-color: $fylo-blue;
+    padding-top: 100px;
+    padding-bottom: 100px;
+    h1{
+      color: $white;
+      font-size: 36px;
+    }
+    p{
+      color: $white;
+    }
+    .section-3-form{
+      display: flex;
+      justify-content: center;
+      input{
+        padding: 12px 20px;
+        border-radius: 4px;
+        outline: none;
+        border: none;
+        width: 100%;
+      }
+    }
+  }
+}
+
+@media(max-width: 600px){
+  #fylo{
+    .section-text{
+      margin-top: 30px;
+      text-align: center;
+      h1{
+        font-size: 26px;
+      }
+    }
+    .section-1-form{
+      input{
+        width: 100% !important;
+        margin-bottom: 20px;
+      }
+      .btn-fylo{
+        width: 100%;
+      }
+    }
+    .section-2{
+      .productive-text{
+        padding-right: 0px;
+        text-align: left;
+      }
+      hr{
+        text-align: center;
+        margin: auto;
+        margin-top: 15px;
+      }
+      .card{
+        max-width: 100%;
+      }
+    }
+    .section-3 p{
+      padding-right: 0px !important;
+    }
+    .btn-fylo{
+      width: 100%;
+    }
+
+  }
+}

@@ -1,0 +1,73 @@
+#huddle-2{
+  .section-hero{
+    background-image: url(/img/huddle-2/bg-desktop.svg), linear-gradient(135deg, hsl(257, 40%, 49%), hsl(257, 40%, 49%), hsl(257, 40%, 49%));
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 100vh;
+    }
+  .hero{
+    margin-top: 70px;
+  }
+  .title{
+    color: $white;
+    font-weight: 600;
+  }
+  p{
+    font-family: $font-open;
+    font-size: 18px;
+    letter-spacing: 0.33px;
+    color: $white;
+    font-weight: 400;
+  }
+  .btn-huddle{
+    background-color: $white;
+    border: 1px solid $white;
+    border-radius: 36px;
+    padding: 12px 48px;
+    color: $huddle-violent;
+    font-weight: 200;
+  }
+  .social-media{
+    float: right;
+    display: flex;
+    .fab{
+      margin-right: 10px;
+      margin-left: 10px;
+      color: $white;
+      font-size: 20px;
+      border: 1px solid $white;
+      height: 40px;
+      width: 40px;
+      border-radius:50%;
+      -moz-border-radius:50%;
+      -webkit-border-radius:50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+}
+
+@media(max-width: 600px){
+  #huddle-2{
+    .section-hero{
+      background-image: url(/img/huddle-2/bg-mobile.svg), linear-gradient(135deg, hsl(257, 40%, 49%), hsl(257, 40%, 49%), hsl(257, 40%, 49%));
+      height: 800px;
+    }
+    .hero{
+      margin-top: 30px;
+    }
+    .logo{
+      width: 50%;
+    }
+    .title{
+      font-size: 24px;
+    }
+    .social-media{
+      float: none;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+}

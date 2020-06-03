@@ -1,0 +1,120 @@
+#huddle{
+  background-color: $white;
+  .title{
+    font-weight: 600;
+    letter-spacing: .22px;
+    margin-bottom: 15px;
+  }
+  .btn-huddle{
+    margin-top: 20px;
+    background: $huddle-pink;
+    border: 1px solid $huddle-pink;
+    color: $white;
+    font-size: 18px;
+    border-radius: 36px;
+    padding: 16px 60px;
+    &:hover{
+      opacity: 0.8;
+    }
+  }
+  p{
+    font-weight: 200;
+    letter-spacing: .30px;
+    font-size: 18px;
+    margin-bottom: 20px;
+  }
+  .section-hero{
+    background-image: url(/img/huddle/bg-hero-desktop.svg), linear-gradient(135deg, hsl(193, 100%, 96%), hsl(193, 100%, 96%), hsl(193, 100%, 96%));
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 100vh;
+    .hero{
+      padding-top: 100px;
+      p{
+        padding-right: 16px;
+      }
+    }
+  }
+  .section-card{
+    margin-top: 100px;
+    .section-card-1{
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+      align-items: center;
+      background-color: $white;
+      box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.2);
+      margin: 0px 20px 50px 20px;
+      padding: 50px 0px 50px 30px;
+      border-radius: 6px;
+      .card-details{
+        padding: 0px 30px;
+      }
+      .card-image{
+        padding: 0px 30px;
+      }
+    }
+  }
+  .section-action{
+    margin-top: 100px;
+    margin-bottom: 100px;
+    .row{
+      justify-content: center;
+      align-items: center;
+      .call-to-action{
+        background-color: $white;
+        box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.2);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 50px 10px;
+        border-radius: 6px;
+      }
+    }
+  }
+}
+
+
+@media(max-width: 600px){
+  #huddle{
+    .btn-huddle{
+      font-size: 14px;
+      padding: 16px 40px;
+    }
+    .section-hero{
+      background-image: url(/img/huddle/bg-hero-mobile.svg), linear-gradient(135deg, hsl(193, 100%, 96%), hsl(193, 100%, 96%), hsl(193, 100%, 96%));
+      height: auto;
+      .hero{
+        padding-top: 50px;
+        .title{
+          font-size: 26px;
+        }
+        p{
+          font-size: 16px;
+          padding-right: 10px;
+          padding-left: 10px;
+        }
+      }
+    }
+    .section-card{
+      .section-card-1{
+        padding: 40px 15px;
+        flex-direction: column;
+        .card-image{
+          margin-bottom: 30px;
+        }
+      }
+    }
+    .section-action{
+      .call-to-action{
+        padding: 50px 13px;
+        margin: 0px 20px 50px 20px;
+        .title{
+          font-size: 18px;
+        }
+      }
+    }
+  }
+}
