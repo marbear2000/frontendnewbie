@@ -16,6 +16,12 @@
       font-size: 18px;
     }
   }
+  .error-msg{
+    color: $ping-lightred;
+    font-size: 12px;
+    margin-top: 5px;
+    padding-left: 5px;
+  }
   .btn-fylo{
     background: $fylo-brightblue;
     border: 1px solid $fylo-brightblue;
@@ -23,6 +29,7 @@
     color: $white;
     border-radius: 4px;
     box-shadow: 0px 3px 15px rgba(0, 0 , 0, 0.2);
+    margin-top: 25px;
   }
   #fylo-form{
     input{
@@ -96,14 +103,13 @@
       color: $white;
     }
     .section-3-form{
-      display: flex;
-      justify-content: center;
+      padding-left: 30px;
       input{
         padding: 12px 20px;
         border-radius: 4px;
         outline: none;
         border: none;
-        width: 100%;
+        width: 70%;
       }
     }
   }
@@ -141,8 +147,16 @@
         max-width: 100%;
       }
     }
-    .section-3 p{
-      padding-right: 0px !important;
+    .section-3{
+      .section-3-form{
+        padding-left: 0px;
+        input{
+          width: 100%;
+        }
+      }
+      p{
+        padding-right: 0px !important;
+      }
     }
     .btn-fylo{
       width: 100%;

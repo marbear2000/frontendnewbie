@@ -40,7 +40,7 @@
           </a>
         </div>
 
-        <div class="col-xs-12 col-sm-12 col-md-3 mt-5 mb-5>
+        <div class="col-xs-12 col-sm-12 col-md-3 mt-5 mb-5">
           <a class="card-link" href="{{ url('/single-price')}}">
             <div class="card">
               <img class="card-img" src="{{ asset('img/single-price/desktop-design.jpg')}}" alt="">
@@ -49,7 +49,7 @@
           </a>
         </div>
 
-        <div class="col-xs-12 col-sm-12 col-md-3 mt-5 mb-5>
+        <div class="col-xs-12 col-sm-12 col-md-3 mt-5 mb-5">
           <a class="card-link" href="{{ url('/ping')}}">
             <div class="card">
               <img class="card-img" src="{{ asset('img/ping-coming/desktop-design.jpg')}}" alt="">
@@ -58,7 +58,7 @@
           </a>
         </div>
 
-        <div class="col-xs-12 col-sm-12 col-md-3 mt-5 mb-5>
+        <div class="col-xs-12 col-sm-12 col-md-3 mt-5 mb-5">
           <a class="card-link" href="{{ url('/huddle')}}">
             <div class="card">
               <img class="card-img" src="{{ asset('img/huddle/desktop-design.jpg')}}" alt="">

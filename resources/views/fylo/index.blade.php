@@ -15,8 +15,10 @@
             <div class="section-1-form">
               <form id="fylo-form" action="">
                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                <input type="email" class="mr-2" name="email" placeholder="Enter your email...">
-                <button class="btn-fylo">Get Started</button>
+                <div class="form-input">
+                  <input type="email" class="mr-2 email-1" name="email-1" placeholder="Enter your email...">
+                  <button type="submit" class="btn-fylo">Get Started</button>
+                </div>
               </form>
             </div>
           </div>
@@ -75,8 +77,10 @@
           <div class="col-sm-12 col-md-6 section-form section-3-form">
             <form id="fylo-access" action="">
               <input type="hidden" name="_token" value="{{ csrf_token() }}">
-              <input type="email" class="mb-3" name="email" placeholder="Enter your email...">
-              <button class="btn-fylo">Get Started For Free</button>
+
+                <input type="email" class="email-2" name="email-2" placeholder="Enter your email...">
+                <button type="submit" class="btn-fylo">Get Started For Free</button>
+
             </form>
           </div>
         </div>
@@ -85,4 +89,54 @@
     @include('components/fylo-footer')
   </div>
 
+@stop
+
+@section('fylo.scripts')
+  <script>
+    const form1 = document.querySelector('#fylo-form');
+    const email1 = document.querySelector('input[name="email-1"]');
+    const errorMsg = document.createElement('div');
+    const formInput = document.querySelector('.form-input');
+    errorMsg.classList.add('error-msg');
+    formInput.appendChild(errorMsg);
+
+    const form2 = document.querySelector('#fylo-access');
+    const email2 = document.querySelector('input.email-2');
+    const emailValue2 = email2.value;
+    const errorMsg2 = document.createElement('div');
+    errorMsg2.classList.add('error-msg');
+    email2.after(errorMsg2);
+
+    const emailValid = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+
+    form1.addEventListener('submit', function(e){
+      e.preventDefault();
+      if(email1.value === ''){
+        errorMsg.innerHTML = "Please enter an email";
+        email1.style.border = "1px solid hsl(354, 100%, 66%)";
+      }
+    });
+
+    email1.addEventListener('keydown', function(){
+        errorMsg.innerHTML = " ";
+        email1.style.border = "none";
+    });
+
+    form2.addEventListener('submit', function(e){
+      e.preventDefault();
+      if(!emailValid.test(emailValue2)){
+        errorMsg2.innerHTML = "Please enter a valid email";
+        email2.style.border = "1px solid hsl(354, 100%, 66%)";
+      };
+    });
+
+    email2.addEventListener('keydown', function(){
+        errorMsg2.innerHTML = " ";
+        email2.style.border = "none";
+    });
+
+
+
+
+  </script>
 @stop

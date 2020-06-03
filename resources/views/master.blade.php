@@ -40,6 +40,7 @@
 
         @yield('custom-scripts')
         @yield('intro-scripts')
+        @yield('fylo.scripts')
 
     </body>
 </html>
