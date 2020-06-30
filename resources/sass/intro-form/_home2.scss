@@ -43,52 +43,36 @@
         padding: 30px 40px;
         border-radius: 6px;
         box-shadow: 0px 10px 2px rgba(0, 0, 0, 0.2);
-        .form-input{
+        .form-control{
+          padding: 25px 0px 25px 20px;
           outline: none;
-          margin-bottom: 10px;
-          position: relative;
         }
-        .form-input.success input{
-          border-color: $intro-form-green;
-        }
-        .form-input.error input{
-          border-color: $intro-form-red;
-        }
-        .form-input input{
-          border: 2px solid #f0f0f0;
-          border-radius: 4px;
-          display: block;
-          width: 100%;
-          padding: 10px;
-          font-size: 14px;
+        input{
           box-shadow: inset 0 -1px 0 #fff;
           font-weight: 600;
+          font-size: 14px;
           color: $intro-form-darkblue;
           letter-spacing: .45px;
         }
-        .form-input input:focus {
-          outline: 0;
+        input:focus,
+        input:active{
+          border: 1px solid $intro-form-darkblue;
+          color: $intro-form-darkblue;
         }
         .icon-error{
-          visibility: hidden;
+          display: none;
           float: right;
           margin-top: -38px;
           margin-right: 16px;
         }
-        .form-input.error .icon-error{
-          visibility: visible;
-        }
-        .error-msg{
-          visibility: hidden;
+        .error-msg,
+        .error-email{
+          display: none;
           margin-top: 5px;
-          margin-bottom: 5px;
           color: $intro-form-red;
           font-size: 10px;
           float: right;
           font-style: italic;
-        }
-        .form-input.error small {
-          visibility: visible;
         }
         .button-container{
           .btn-submit{

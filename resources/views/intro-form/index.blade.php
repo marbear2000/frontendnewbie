@@ -16,29 +16,29 @@
             <form id="form-trial" class="form-horizontal" action="">
               <input type="hidden" name="_token" value="{{ csrf_token() }}">
 
-              <div class="form-group">
-                <input type="text" class="form-control" name="first_name" placeholder="First Name">
+              <div class="form-input">
+                <input id="first_name" type="text" name="first_name" placeholder="First Name">
                 <img class="icon-error" src="{{ asset('img/intro-form/icon-error.svg')}}" alt="Error icon">
-                <p class="error-msg first-error">First name cannot be empty</p>
+                <small class="error-msg">Error message</small>
               </div>
 
-              <div class="form-group">
-                <input type="text" class="form-control" name="last_name" placeholder="Last Name">
+              <div class="form-input">
+                <input id="last_name" type="text" name="last_name" placeholder="Last Name">
                 <img class="icon-error" src="{{ asset('img/intro-form/icon-error.svg')}}" alt="Error icon">
-                <p class="error-msg">Last name cannot be empty</p>
+                <small class="error-msg">Error message</small>
               </div>
 
-              <div class="form-group">
-                <input type="email" class="form-control" name="email" placeholder="Email Address">
+              <div class="form-input">
+                <input id="email" type="text" name="email" placeholder="Email Address">
                 <img class="icon-error" src="{{ asset('img/intro-form/icon-error.svg')}}" alt="Error icon">
-                <p class="error-msg">Email cannot be empty</p>
-                <p class="error-email">Please enter a valid email</p>
+                <small class="error-msg">Error message</small>
+                <!-- <p class="error-email">Please enter a valid email</p> -->
               </div>
 
-              <div class="form-group">
-                <input type="password" class="form-control" name="password" placeholder="Password">
+              <div class="form-input">
+                <input id="password" type="password" name="password" placeholder="Password">
                 <img class="icon-error" src="{{ asset('img/intro-form/icon-error.svg')}}" alt="Error icon">
-                <p class="error-msg">Password cannot be empty</p>
+                <small class="error-msg">Error message</small>
               </div>
 
               <div class="button-container">
@@ -61,76 +61,71 @@
 @section('intro-scripts')
   <script>
 
-    const form = document.querySelector('#form-trial');
-    const iconError = document.querySelectorAll('.icon-error');
-    const errorMsg = document.querySelectorAll('.error-msg');
-    const errorEmail = document.querySelector('.error-email');
-    const firstName = form['first_name'];
-    const lastName = form['last_name'];
-    const email = form['email'];
-    const password = form['password'];
-    const clearErrors = document.querySelectorAll('input.form-control');
-    const emailValid = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    const form = document.getElementById('form-trial');
+    const firstName = document.getElementById('first_name');
+    const lastName = document.getElementById('last_name');
+    const email = document.getElementById('email');
+    const password = document.getElementById('password');
 
+    // Show error message
+    function showError(input, msg) {
+      const formInput = input.parentElement;
+      formInput.className = "form-input error";
+      const small = formInput.querySelector('small');
+      small.innerText = msg;
+    }
 
-    clearErrors[0].addEventListener('keyup', function() {
-      iconError[0].style.display = "none";
-      errorMsg[0].style.display = "none"
-    });
+    // show success border outline
+    function showSuccess(input) {
+      const formInput = input.parentElement;
+      formInput.className = "form-input success";
+    }
 
-    clearErrors[1].addEventListener('keyup', function() {
-      iconError[1].style.display = "none";
-      errorMsg[1].style.display = "none"
-    });
+    // check required fields
+    function checkRequired(inputArray) {
+      inputArray.forEach(function(input) {
+        if(input.value.trim() === ''){
+          showError(input, `${getFieldName(input)} is required`);
+        } else {
+          showSuccess(input);
+        }
+      });
+    }
 
-    clearErrors[2].addEventListener('keyup', function() {
-      iconError[2].style.display = "none";
-      errorMsg[2].style.display = "none";
-      errorEmail.style.display = "none";
-    });
+    // email validation
+    function checkEmail(input) {
+      const regexEmail = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+      if(regexEmail.test(input.value.trim())){
+        return showSuccess(input);
+      } else {
+        return showError(input, "Email is not valid");
+      }
+    }
 
-    clearErrors[3].addEventListener('keyup', function() {
-      iconError[3].style.display = "none";
-      errorMsg[3].style.display = "none"
-    });
+    // check input length
+    function checkInputLength(input, min, max){
+      if(input.value.length < min) {
+        return showError(input, `${getFieldName(input)} must be greater than ${min} characters`);
+      } else {
+        showSuccess(input);
+      }
+    }
 
+    //get field name
+    function getFieldName(input){
+      return input.name.charAt(0).toUpperCase() + input.name.slice(1).replace('_', ' ');
+    }
+
+    // submit form
 
     form.addEventListener('submit', function(event){
       event.preventDefault();
 
-      if(firstName.value === '') {
-        iconError[0].style.display = "block";
-        errorMsg[0].style.display = "block";
-      }
-
-      if(lastName.value === '') {
-        iconError[1].style.display = "block";
-        errorMsg[1].style.display = "block";
-      }
-
-      if(email.value === '') {
-        iconError[2].style.display = "block";
-        errorMsg[2].style.display = "block";
-      } else if(!emailValid.test(email.value)) {
-        iconError[2].style.display = "block";
-        errorEmail.style.display = "block";
-      }
-
-      if(password.value === '') {
-        iconError[3].style.display = "block";
-        errorMsg[3].style.display = "block";
-      }
-
-
-      // iconError.forEach(icon => icon);
-    // errorMsg.forEach(msg => msg);
-
-    // function removeError() {
-    //   iconError.forEach(icon => icon.style.display = "none");
-    //   errorMsg.forEach(msg => msg.style.display = "none");
-    // }
-    });
-
+      checkRequired([firstName, lastName, email, password]);
+      checkEmail(email);
+      checkInputLength(firstName, 3, 15);
+      checkInputLength(lastName, 3, 15);
+    })
 
   </script>
 
