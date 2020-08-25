@@ -16,29 +16,41 @@
       font-size: 18px;
     }
   }
-  .error-msg{
-    color: $ping-lightred;
-    font-size: 12px;
-    margin-top: 5px;
-    padding-left: 5px;
-  }
-  .btn-fylo{
-    background: $fylo-brightblue;
-    border: 1px solid $fylo-brightblue;
-    padding: 12px 50px;
-    color: $white;
-    border-radius: 4px;
-    box-shadow: 0px 3px 15px rgba(0, 0 , 0, 0.2);
-    margin-top: 25px;
-  }
-  #fylo-form{
-    input{
-      outline: none;
-      color: $fylo-darkblue;
-      border: 1px solid $fylo-darkblue;
-      padding: 12px 20px;
+  .section-1{
+    #fylo-form{
+      .form-input.success input{
+        border-color: $fylo-brightblue;
+      }
+      .form-input.error input{
+        border-color: $ping-lightred;
+      }
+      input{
+        outline: none;
+        color: $fylo-darkblue;
+        border: 1px solid $fylo-darkblue;
+        padding: 12px 20px;
+        border-radius: 4px;
+        width: 60%;
+      }
+    }
+    .btn-fylo{
+      background: $fylo-brightblue;
+      border: 1px solid $fylo-brightblue;
+      padding: 12px 50px;
+      color: $white;
       border-radius: 4px;
-      width: 60%;
+      box-shadow: 0px 3px 15px rgba(0, 0 , 0, 0.2);
+      margin-top: 25px;
+    }
+    .form-input small{
+      visibility: hidden;
+      color: $ping-lightred;
+      font-size: 12px;
+      margin-top: 5px;
+      padding-left: 5px;
+    }
+    .form-input.error small{
+      visibility: visible;
     }
   }
   .section-2{
@@ -104,12 +116,40 @@
     }
     .section-3-form{
       padding-left: 30px;
-      input{
-        padding: 12px 20px;
+      #fylo-access{
+        .form-input-2.success input{
+          border-color: $fylo-brightblue;
+        }
+        .form-input-2.error input{
+          border-color: $ping-lightred;
+        }
+        input{
+          outline: none;
+          padding: 12px 20px;
+          border-radius: 4px;
+          outline: none;
+          border: none;
+          width: 70%;
+        }
+      }
+      .btn-fylo-2{
+        background: $fylo-brightblue;
+        border: 1px solid $fylo-brightblue;
+        padding: 12px 50px;
+        color: $white;
         border-radius: 4px;
-        outline: none;
-        border: none;
-        width: 70%;
+        box-shadow: 0px 3px 15px rgba(0, 0 , 0, 0.2);
+        margin-top: 25px;
+      }
+      .form-input-2 small{
+        visibility: hidden;
+        color: $ping-lightred;
+        font-size: 12px;
+        margin-top: 5px;
+        padding-left: 5px;
+      }
+      .form-input-2.error small{
+        visibility: visible;
       }
     }
   }

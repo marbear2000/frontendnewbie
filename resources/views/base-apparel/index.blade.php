@@ -70,27 +70,5 @@
       checkEmail(email);
     });
 
-    // const submitBtn = document.querySelector('#email-submit');
-    // const email = document.querySelector('#email-input');
-    // const errorIcon = document.querySelector('.error-icon');
-    // const errorMsg = document.querySelector('.error-msg');
-    // const emailValid = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-
-    // function validate(){
-    //   let emailValue = email.value;
-
-    //   if(!emailValid.test(emailValue)){
-    //     errorIcon.style.display = 'block';
-    //     errorMsg.style.display = 'block';
-    //     email.style.border = '1px solid #f96262';
-    //   } else {
-    //     console.log('yeah')
-    //   }
-    //   return false
-    // }
-
-    // submitBtn.addEventListener('click', validate);
-
-
   </script>
 @stop
